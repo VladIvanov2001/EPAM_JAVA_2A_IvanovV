@@ -2,3 +2,6 @@
 .idea/
 *.iml
 *.iws
+
+#epam
+epam_java_app/out/
