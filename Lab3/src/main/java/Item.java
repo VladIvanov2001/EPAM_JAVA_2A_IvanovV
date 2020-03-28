@@ -6,12 +6,6 @@ public class Item {
     private int count;
     private List<Store> stores;
 
-    public Item(String name, int price, int count){
-        this.name = name;
-        this.price = price;
-        this.count = count;
-    }
-
     public String getName() {
         return name;
     }
@@ -22,5 +16,9 @@ public class Item {
 
     public int getPrice() {
         return price;
+    }
+
+    public List<Store> getStores() {
+        return stores;
     }
 }
