@@ -1,3 +1,8 @@
+package entities;
+
+import entities.Item;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Store {
@@ -8,7 +13,11 @@ public class Store {
     public Store(String name, List<Item> items, List<String>feedbackList){
         this.name = name;
         this.items = items;
-        this.feedbackList = feedbackList;
+        this.feedbackList = new ArrayList<String>();
+    }
+
+    public Store() {
+
     }
 
     public String getName() {
@@ -21,5 +30,9 @@ public class Store {
 
     public List<String> getFeedbackList() {
         return feedbackList;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
