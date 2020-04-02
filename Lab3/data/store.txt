@@ -1,3 +1,3 @@
-21vek-feedback-Milk-Meat-Tea-Mars
-Korona-feedback-Coffee-Spaghetti
-Almi-feedback-Cheese-Chips-Mars
+21vek-good/Milk/Meat/Tea/Mars
+Korona/super/Coffee/Spaghetti
+Almi/nice/Cheese/Chips/Mars

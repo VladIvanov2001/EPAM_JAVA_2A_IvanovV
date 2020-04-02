@@ -17,7 +17,7 @@ public class Reader {
         try(BufferedReader reader = new BufferedReader(new FileReader("data/items.txt"))){
             String buffer;
             while((buffer = reader.readLine()) != null){
-                StringTokenizer tokenizer = new StringTokenizer(buffer, "-");
+                StringTokenizer tokenizer = new StringTokenizer(buffer, "/");
                 String name = tokenizer.nextToken();
                 int price = Integer.parseInt(tokenizer.nextToken());
                 int count = Integer.parseInt(tokenizer.nextToken());
@@ -33,7 +33,7 @@ public class Reader {
             String buffer;
             while((buffer = reader.readLine()) != null){
                 Store store = new Store();
-                StringTokenizer tokenizer = new StringTokenizer(buffer, "-");
+                StringTokenizer tokenizer = new StringTokenizer(buffer, "/");
                 store.setName(tokenizer.nextToken());
                 store.addFeedback(tokenizer.nextToken());
 
