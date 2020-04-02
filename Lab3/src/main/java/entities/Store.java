@@ -10,14 +10,7 @@ public class Store {
     private List<Item> items;
     private List<String> feedbackList;
 
-    public Store(String name) {
-        this.name = name;
-        this.items = new ArrayList<>();
-        this.feedbackList = new LinkedList<>();
-    }
-
     public Store() {
-        super();
         this.items = new ArrayList<>();
         this.feedbackList = new LinkedList<>();
     }

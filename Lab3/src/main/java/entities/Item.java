@@ -3,7 +3,12 @@ package entities;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringJoiner;
-
+/* a. ClassA - entities.Item с полями:
+                o String name
+                o Int price
+                o Int count
+                o List<entities.Store> stores
+*/
 public class Item {
     private String name;
     private Integer price;
@@ -11,7 +16,6 @@ public class Item {
     private List<Store> stores;
 
     public Item() {
-        super();
         this.stores = new LinkedList<>();
     }
 
@@ -26,24 +30,12 @@ public class Item {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
     public Integer getCount() {
         return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
     }
 
     public List<Store> getStores() {
