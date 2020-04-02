@@ -14,7 +14,6 @@ import java.util.StringTokenizer;
 public class Reader {
     static Logger logger = LogManager.getLogger();
     public static void readItems(ArrayList<Item> items){
-        ////////////////////
         try(BufferedReader reader = new BufferedReader(new FileReader("data/items.txt"))){
             String buffer;
             while((buffer = reader.readLine()) != null){
@@ -42,7 +41,7 @@ public class Reader {
                     Item item = new Item();
                     String itemName = tokenizer.nextToken();
 
-                    for (Item tmpItem : items) {
+                    for (Item tmpItem : items) {             //Чтобы в айтемы добавить магазин, а в стор добавить айтем
                         if(tmpItem.getName().equals(itemName)){
                             item = tmpItem;
                             item.setStores(store);
@@ -58,3 +57,5 @@ public class Reader {
         }
     }
 }
+
+
