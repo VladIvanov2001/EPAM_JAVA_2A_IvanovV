@@ -44,5 +44,6 @@ public class Main {
 
         CaseMenu menu = new CaseMenu(in);
         menu.start(itemSupply);
+        logger.info("all completely done");
     }
 }
