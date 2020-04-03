@@ -7,7 +7,6 @@ import java.util.*;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 /*
         − проверить, есть ли товары, дороже 500;
         − Найти товары с максимальным и минимальным количеством единиц на складе
@@ -18,6 +17,7 @@ import java.util.stream.Stream;
         − Получить список магазинов без дубликатов
 */
 public class Sorting {
+
     public static List<Item> overFiveHundred(Supplier<Stream<Item>> itemSupply){ //дороже 500
         return itemSupply.get().filter(item -> item.getPrice() > 500)
                 .peek(item-> System.out.println("items with price over 500: "+item.getName()))
@@ -34,9 +34,22 @@ public class Sorting {
         return minCount.orElseThrow(NullPointerException::new);//Не получается вернуть объект - возвращается эксепшн
     }
 
-    public static List<Item> oneStore(Supplier<Stream<Item>> itemSupply){ //товар с единственным магазином
-        return itemSupply.get().filter(item -> item.getStores().size() == 1)
+    public static List<Item> oneStore(Supplier<Stream<Item>> itemSupply){ //товар с единственным магазином последовательно
+        long startTime = System.currentTimeMillis();
+        List<Item> oneStoreItems = itemSupply.get().filter(item -> item.getStores().size() == 1)
                 .collect(Collectors.toList());
+        long timeSpent = System.currentTimeMillis() - startTime;
+        System.out.println("программа последовательно выполнялась " + timeSpent + " миллисекунд");
+        return oneStoreItems;
+    }
+
+    public static List<Item> oneStorePar(Supplier<Stream<Item>> itemSupply){ //товар с единственным магазином параллельно
+        long startTime = System.currentTimeMillis();
+        List<Item> oneStoreItems = itemSupply.get().parallel().filter(item -> item.getStores().size() == 1)
+                .collect(Collectors.toList());
+        long timeSpent = System.currentTimeMillis() - startTime;
+        System.out.println("программа выполнялась параллельно " + timeSpent + " миллисекунд");
+        return oneStoreItems;
     }
 
     public static List<Item> sortPrice(Supplier<Stream<Item>> itemSupply){//сортировка по цене
